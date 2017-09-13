@@ -1,0 +1,20 @@
+<h1>
+  <a href="/apps/<%= @app['name'] %>">
+    <abbr title="<%= @app['uuid'] %>">
+      <%= @app['name'] %>
+  </abbr>
+  </a>
+</h1>
+
+<ul>
+<% @app.each do |key, value| %>
+  <li><strong><%= key %>:</strong> <%= value %></li>
+<% end %>
+</ul>
+
+<h1>Recent Activity</h1>
+<ul>
+<% @feed_items.each do |item| %>
+  <li><%= item['body']['text'] %></li>
+<% end %>
+</ul>
